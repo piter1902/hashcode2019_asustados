@@ -10,7 +10,8 @@ class slideshow:
 		for i in range(0, len(self.__v) - 1):
 			# print(i)
 			maximo = maxi.match(i+1)
-			sys.stderr.write(str(maximo))
+			sys.stderr.write('max (' + str(i) + ') = ' + str(maximo)+'\n')
+			
 			maxj = i + 1
 			for j in range(0, i + 1):
 				s = maxi.moverelem(i+1, j)
