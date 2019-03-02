@@ -21,7 +21,7 @@ class slideshow:
 
     def moverelem(self, elem: int, pos: int):
         s = self
-        aux = s.__V[elem]
+        aux = s.__v[elem]
         inf = pos
         sup = elem
         if pos > elem:
