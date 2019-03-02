@@ -10,7 +10,7 @@ class Slide:
 	def __init__(self, pic1: Pic, pic2: Pic = None):
 		self.__pic1 = pic1
 		self.__pic2 = pic2
-		if (pic2 != None):	
+		if pic2 is not None:	
 			self.__tags = self.__pic1.tags() | self.__pic2.tags()
 		else:
 			self.__tags = self.__pic1.tags()
