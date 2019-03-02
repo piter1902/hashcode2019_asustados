@@ -35,7 +35,7 @@ class slideshow:
 	def match(self):
 		suma = 0
 		for i in range(len(self.__v)-1):
-			suma = self.__v[i].min(self.__v[i+1])
+			suma += self.__v[i].min(self.__v[i+1])
 		return suma
 
 	def escribir(self):
