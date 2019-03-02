@@ -6,11 +6,11 @@ class Pic:
 		self.__orien = orien
 		self._tags = tags
 
-	def __init__(id: int, resto: list):
+	def __init__(self, id: int, resto: list):
 		self.__id = id
 		self.__orien = resto[0] #orientacion es el primer elto de la lista
 		#resto[1] es el nº de tags que nos da igual
-		self.__tags = set(resto[2:]) 
+		self.__tags = set(resto[2:]) # Asi se deberia convertir la lista en set
 
 	def tags(self):
 		return set(self.__tags)
