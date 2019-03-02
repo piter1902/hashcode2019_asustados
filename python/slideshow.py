@@ -1,4 +1,5 @@
 import sys # solo para tener stderr
+import random
 
 class slideshow:
 	def __init__(self, vector: list):
@@ -23,6 +24,12 @@ class slideshow:
 				maxi = maxi.moverelem(i+1, maxj)
 		return maxi
 
+	def ordenarEstadisticamente(self):
+		maxi = self
+		v = self.__v
+		for i in range(0, len(self.__v)):
+			
+
 	def moverelem(self, elem: int, pos: int):
 		#s = self
 		#aux = s.__v[elem]
@@ -43,7 +50,6 @@ class slideshow:
 	# Para calcular la suma de maximos desde 0 hasta el elemento señalado
 	def match(self, hasta: int):
 		suma = 0
-		actual = i
 		for i in range(0, hasta):
 			# La suma es en parejas, es decir: (0,1), (1,2), (2,3), (3,4) ... (hasta-1,hasta)
 			suma += self.__v[i].min(self.__v[i+1])
