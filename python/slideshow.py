@@ -1,4 +1,4 @@
-
+import sys # solo para tener stderr
 
 class slideshow:
 	def __init__(self, vector: list):
@@ -8,8 +8,9 @@ class slideshow:
 		maxi = self
 		maximo = 0
 		for i in range(0, len(self.__v) - 1):
-			print(i)
+			# print(i)
 			maximo = maxi.match(i+1)
+			sys.stderr.write(str(maximo))
 			maxj = i + 1
 			for j in range(0, i + 1):
 				s = maxi.moverelem(i+1, j)
