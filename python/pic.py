@@ -1,11 +1,12 @@
 
 
 class Pic:
-	def __init__(self, orien: str, id: int, tags: set):
-		self.__id = id
-		self.__orien = orien
-		self._tags = tags
-
+	# def __init__(self, orien: str, id: int, tags: set):
+	# 	self.__id = id
+	# 	self.__orien = orien
+	# 	self._tags = tags
+######### este constructor de arriba era como si no estuviera, ##########
+######### se redefinía con el de debajo						   ##########
 	def __init__(self, id: int, resto: list):
 		self.__id = id
 		self.__orien = resto[0] #orientacion es el primer elto de la lista
