@@ -20,3 +20,9 @@ class Slide:
         a2 = s.tags() - self.tags()
         a3 = self.tags() - s.tags()
         return min(len(a1), len(a2), len(a3))
+
+    def __str__(self):
+        s = str(self.__pic1.id())
+        if self.__pic2 is not None:
+            s += str(self.__pic2.id())
+        return s

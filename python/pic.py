@@ -9,3 +9,5 @@ class Pic:
     def tags(self):
         return set(self.__tags)
 
+    def id(self) -> int:
+        return self.__id

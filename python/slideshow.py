@@ -38,3 +38,6 @@ class slideshow:
             suma = self.__v[i].min(self.__v[i+1])
         return suma
 
+    def escribir(self):
+        for el in self.__v:
+            print(str(el))
