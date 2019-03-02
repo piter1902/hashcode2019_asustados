@@ -3,14 +3,14 @@ from pic import Pic
 
 class Slide:
 	def __init__(self, pic: Pic):
-		__pic1 = pic
-		__pic2 = None
-		__tags = __pic1.tags()
+		self.__pic1 = pic
+		self.__pic2 = None
+		self.__tags = self.__pic1.tags()
 
 	def __init__(self, pic1: Pic, pic2: Pic):
-		__pic1 = pic1
-		__pic2 = pic2
-		__tags = __pic1 | __pic2
+		self.__pic1 = pic1
+		self.__pic2 = pic2
+		self.__tags = self.__pic1.tags() | self.__pic2.tags()
 
 	def tags(self):
 		return self.__tags

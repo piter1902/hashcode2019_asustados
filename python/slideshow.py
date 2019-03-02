@@ -2,7 +2,7 @@
 
 class slideshow:
 	def __init__(self, vector: list):
-		__v = vector
+		self.__v = vector
 
 	def ordenarMax(self):
 		maxi = self
