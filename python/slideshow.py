@@ -27,8 +27,8 @@ class slideshow:
 		if pos > elem:
 			inf = elem
 			sup = pos
-		for i in range(inf, sup):
-			s.__v[i+1] = s.__v[i]
+		for i in range(sup, inf, -1):
+			s.__v[i] = s.__v[i-1]
 		s.__v[pos] = aux
 		return s
 
@@ -39,6 +39,8 @@ class slideshow:
 		return suma
 
 	def escribir(self):
+		#print("Longitud:")
 		print(len(self.__v))
+		#print("-----")
 		for el in self.__v:
 			print(str(el))

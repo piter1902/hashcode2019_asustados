@@ -29,7 +29,7 @@ def estoTeSacaUnaListaDeSlides(slides):
 
 
 if __name__ == "__main__":
-	print ("Holi")
+	#print ("Holi")
 	# pics = []
 
 	#ejemploPic = Pic(1, ['la', 'fsahn', 'oaga'])
