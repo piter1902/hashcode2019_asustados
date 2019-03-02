@@ -1,6 +1,6 @@
 import fileinput
-from pic import *
-from slide import *
+from pic import Pic
+from slide import Slide
 from slideshow import slideshow
 
 
@@ -10,21 +10,19 @@ def a_ver_esa_lectura(pics):
 			# print(line)
 			separada = line[:len(line)-1].split(' ') # Separamos por ' '
 			# print(separada)
-			fila = fileinput.lineno() # nº de fila
+			fila = fileinput.lineno()	# n de fila
 			picLeido = Pic(fila-1, separada) # construyo el leido...
-			pics.append(picLeido) # y lo añado a la lista
+			pics.append(picLeido) # y lo anado a la lista
 			
-
-
 
 #meencantacopiarypegarcodigo
 def estoTeSacaUnaListaDeSlides(slides):
 	for line in fileinput.input():
 		if not fileinput.isfirstline(): #a tomar viento la primera linea
 			separada = line[:len(line)-1].split(' ') # Separamos por ' '
-			fila = fileinput.lineno() # nº de fila
+			fila = fileinput.lineno() # n de fila
 			picLeido = Pic(fila-1, separada) # construyo el leido...
-			slides.append(Slide(picLeido)) # y lo añado a la lista
+			slides.append(Slide(picLeido)) # y lo anado a la lista
 			
 
 
