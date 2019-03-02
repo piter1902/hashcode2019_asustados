@@ -2,15 +2,18 @@ from pic import Pic
 
 
 class Slide:
-	def __init__(self, pic: Pic):
-		self.__pic1 = pic
-		self.__pic2 = None
-		self.__tags = self.__pic1.tags()
+	# def __init__(self, pic: Pic):
+	# 	self.__pic1 = pic
+	# 	self.__pic2 = None
+	# 	self.__tags = self.__pic1.tags()
 
-	# def __init__(self, pic1: Pic, pic2: Pic):
-	# 	self.__pic1 = pic1
-	# 	self.__pic2 = pic2
-	# 	self.__tags = self.__pic1.tags() | self.__pic2.tags()
+	def __init__(self, pic1: Pic, pic2: Pic = None):
+		self.__pic1 = pic1
+		self.__pic2 = pic2
+		if (pic2 != None):	
+			self.__tags = self.__pic1.tags() | self.__pic2.tags()
+		else:
+			self.__tags = self.__pic1.tags()
 
 	def tags(self):
 		return self.__tags
