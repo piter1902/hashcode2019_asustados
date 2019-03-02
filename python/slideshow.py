@@ -9,13 +9,13 @@ class slideshow:
 		maximo = 0
 		for i in range(0, len(self.__v) - 1):
 			# print(i)
-			maximo = maxi.match(i+1)
+			maximo = maxi.match(i,i+1)
 			sys.stderr.write('max (' + str(i) + ') = ' + str(maximo)+'\n')
 			
 			maxj = i + 1
 			for j in range(0, i + 1):
 				s = maxi.moverelem(i+1, j)
-				k = s.match(i+1)
+				k = s.match(i,i+1)
 				if k > maximo:
 					maxj = j
 					maximo = k
@@ -43,10 +43,24 @@ class slideshow:
 	# Para calcular la suma de maximos desde 0 hasta el elemento señalado
 	def match(self, hasta: int):
 		suma = 0
+		actual = i
 		for i in range(0, hasta):
 			# La suma es en parejas, es decir: (0,1), (1,2), (2,3), (3,4) ... (hasta-1,hasta)
 			suma += self.__v[i].min(self.__v[i+1])
+			sys.stderr.write('suma en for = ' + str(suma)+'\n')
+		sys.stderr.write('suma = ' + str(suma)+'\n')
 		return suma
+
+	# Para calcular la suma de maximos desde 0 hasta el elemento señalado
+	def match(self, indice: int, hasta: int):
+		suma = 0
+		for i in range(0, hasta):
+			# La suma es en parejas, es decir: (0,1), (1,2), (2,3), (3,4) ... (hasta-1,hasta)
+			suma += self.__v[indice].min(self.__v[i+1])
+			sys.stderr.write('suma en for = ' + str(suma)+'\n')
+		sys.stderr.write('suma = ' + str(suma)+'\n')
+		return suma
+
 
 	def escribir(self):
 		#print("Longitud:")
