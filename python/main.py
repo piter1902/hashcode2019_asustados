@@ -1,6 +1,7 @@
 import fileinput
 from pic import *
 from slide import *
+from slideshow import slideshow
 
 
 def a_ver_esa_lectura(pics):
@@ -43,3 +44,6 @@ if __name__ == "__main__":
 
 	slides = []
 	estoTeSacaUnaListaDeSlides(slides)
+	slidesh = slideshow(slides)
+	slidesh = slidesh.ordenarMax()
+	slidesh.escribir()
