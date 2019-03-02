@@ -24,5 +24,6 @@ class Slide:
 	def __str__(self):
 		s = str(self.__pic1.id())
 		if self.__pic2 is not None:
+		    s += " "
 			s += str(self.__pic2.id())
 		return s
