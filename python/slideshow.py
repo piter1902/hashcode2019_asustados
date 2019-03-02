@@ -6,12 +6,14 @@ class slideshow:
 
 	def ordenarMax(self):
 		maxi = self
-		maximo = self.match()
+		maximo = 0
 		for i in range(0, len(self.__v) - 1):
+			print(i)
+			maximo = maxi.match(i+1)
 			maxj = i + 1
 			for j in range(0, i + 1):
 				s = maxi.moverelem(i+1, j)
-				k = s.match()
+				k = s.match(i+1)
 				if k > maximo:
 					maxj = j
 					maximo = k
@@ -20,21 +22,27 @@ class slideshow:
 		return maxi
 
 	def moverelem(self, elem: int, pos: int):
+		#s = self
+		#aux = s.__v[elem]
+		#inf = pos
+		#sup = elem
+		#if pos > elem:
+		#	inf = elem
+		#	sup = pos
+		#for i in range(sup, inf, -1):
+		#	s.__v[i] = s.__v[i-1]
+		#s.__v[pos] = aux
+		#return s
 		s = self
-		aux = s.__v[elem]
-		inf = pos
-		sup = elem
-		if pos > elem:
-			inf = elem
-			sup = pos
-		for i in range(sup, inf, -1):
-			s.__v[i] = s.__v[i-1]
-		s.__v[pos] = aux
+		el = s.__v.pop(elem)
+		s.__v.insert(pos, el)
 		return s
 
-	def match(self):
+	# Para calcular la suma de maximos desde 0 hasta el elemento señalado
+	def match(self, hasta: int):
 		suma = 0
-		for i in range(len(self.__v)-1):
+		for i in range(0, hasta):
+			# La suma es en parejas, es decir: (0,1), (1,2), (2,3), (3,4) ... (hasta-1,hasta)
 			suma += self.__v[i].min(self.__v[i+1])
 		return suma
 
