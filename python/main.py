@@ -2,20 +2,17 @@ import fileinput
 import pic
 
 def a_ver_esa_lectura(pics):
-	i = 0
 	for line in fileinput.input():
-		print(line)
-		separada = line.split(' ')		# Separamos por ' '
-		print(separada.insert(0, [i]))
-		pics.append(separada.insert(0, i)) # Le meto el id al principio
-		i+=1 # No me dejaba hacer i++  >:(
+		if not fileinput.isfirstline(): #a tomar viento la primera linea
+			print(line)
+			separada = line[:len(line)-1].split(' ')		# Separamos por ' '
+			print(separada)
+			fila = fileinput.lineno() #nº de fila
+			picLeido = Pic(fila-1, separada) # construyo el leido...
+			pics.append(picLeido) # y lo añado a la lista
+			
 
 
-# de "lista de listas de strings" a "lista de pics"
-def ll_to_lp(input, output):
-	for pic in input:
-		for atrib in pic:
-			a
 
 
 if __name__ == "__main__":
