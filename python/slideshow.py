@@ -14,16 +14,32 @@ class slideshow:
 
 	def unirverticales(self):
 		for el in self.__v:
-			self.__v.remove(el)
 			pi = el.pics()
 			pi1 = pi.pop()
 			if pi1.orientation() == 'V':
+				self.__v.remove(el)
 				self.__verticales.append(pi1)
 		#Juntamos verticales de forma aleatoria
-		random.shuffle(self.__verticales)
-		for i in range(0, len(self.__verticales)-1):
-			self.__v.append(Slide(self.__verticales[i], self.__verticales[i+1]))
-			i+=1
+		#random.shuffle(self.__verticales)
+		self.maximizar_verticales()
+		#for i in range(0, len(self.__verticales)-1):
+		#	self.__v.append(Slide(self.__verticales[i], self.__verticales[i+1]))
+		#	i+=1
+
+	def maximizar_verticales(self):
+		for i in range(0, len(self.__verticales) - 2):
+			max_el = i + 1
+			max_intersec = len(self.__verticales[i].tags() & self.__verticales[i+1].tags())
+			for j in range(i+1, len(self.__verticales) - 1):
+				cand = len(self.__verticales[i].tags() & self.__verticales[j].tags())
+				# La interseccion del elemento actual con el j-esimo es mayor que la que teniamos
+				if cand > max_intersec:
+					max_intersec = cand
+					max_el = j
+			el1 = Slide(self.__verticales[i], self.__verticales[max_el])
+			self.__v.append(el1)
+			self.__verticales.remove(self.__verticales[i])
+			self.__verticales.remove(self.__verticales[max_el])
 
 
 	def ordenarMax(self):
@@ -46,19 +62,20 @@ class slideshow:
 		return maxi
 
 	def muestra(self, n: int = 30000) -> list:
+		if n > len(self.__v):
+			n = len(self.__v)//2
 		return random.sample(self.__v, n)
 
 	def obtenermax(self, ult: int, v: list) -> Slide:
 		self.__m, sl = self.match_barato(ult, v)
 		return sl
 
-
 	def ordenarEstadisticamente(self):
 		maxi = slideshow()
 		el = random.choice(self.__v)
 		self.__v.remove(el)
 		maxi.__v.append(el)
-		for i in range(1, len(self.__v)):
+		for i in range(1, len(self.__v)-1):
 			sys.stderr.write(str(i))
 			opciones = self.muestra()
 			m = self.obtenermax(i-1, opciones)
