@@ -18,3 +18,6 @@ class Pic:
 
 	def id(self) -> int:
 		return self.__id
+
+	def orientation(self) -> str:
+		return self.__orien

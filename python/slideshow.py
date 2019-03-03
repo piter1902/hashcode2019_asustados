@@ -1,9 +1,29 @@
 import sys # solo para tener stderr
 import random
+from typing import re
+
+from slide import *
 
 class slideshow:
-	def __init__(self, vector: list):
+	def __init__(self, vector: list = list()):
 		self.__v = vector
+		self.__verticales = list()
+		if len(vector) > 0:
+			self.unirverticales()
+
+	def unirverticales(self):
+		for el in self.__v:
+			self.__v.remove(el)
+			pi = el.pics()
+			pi1 = pi.pop()
+			if pi1.orientation() == 'V':
+				self.__verticales.append(pi1)
+		#Juntamos verticales de forma aleatoria
+		random.shuffle(self.__verticales)
+		for i in range(0, len(self.__verticales)-1):
+			self.__v.append(Slide(self.__verticales[i], self.__verticales[i+1]))
+			i+=1
+
 
 	def ordenarMax(self):
 		maxi = self
@@ -24,11 +44,44 @@ class slideshow:
 				maxi = maxi.moverelem(i+1, maxj)
 		return maxi
 
+	def muestra(self, n: int = 30000) -> list:
+		li = list()
+		i = 0
+		while i < n:
+			index = random.randint(0, len(self.__v)-1)
+			if self.__v[index] not in li:
+				li.append(self.__v[index])
+				i += 1
+		return li
+
+	def obtenermax(self, v: list) -> Slide:
+		maximo = 0
+		indiceMax = 0
+		for i in range(0, len(v)):
+			self.__v.append(v[i]) # Para comprobar el maximo
+			op = self.match()
+			if i == 0:
+				indiceMax = 0
+				maximo = op
+			elif maximo < op:
+				indiceMax = i
+				maximo = op
+			self.__v.remove(v[i])
+		return v[indiceMax]
+
+
 	def ordenarEstadisticamente(self):
-		maxi = self
-		v = self.__v
-		for i in range(0, len(self.__v)):
-			
+		maxi = slideshow()
+		el = random.choice(self.__v)
+		self.__v.remove(el)
+		maxi.__v.append(el)
+		for i in range(1, len(self.__v)):
+			opciones = self.muestra()
+			m = self.obtenermax(opciones)
+			maxi.__v.append(m)
+			self.__v.remove(m)
+		return maxi
+
 
 	def moverelem(self, elem: int, pos: int):
 		#s = self

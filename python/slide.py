@@ -34,3 +34,10 @@ class Slide:
 		if self.__pic2 is not None:
 			s += " " + str(self.__pic2.id())
 		return s
+
+	def pics(self) -> list:
+		li = list()
+		li.append(self.__pic1)
+		if self.__pic2 is not None:
+			li.append(self.__pic2)
+		return li

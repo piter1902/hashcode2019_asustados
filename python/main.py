@@ -43,5 +43,6 @@ if __name__ == "__main__":
 	slides = []
 	estoTeSacaUnaListaDeSlides(slides)
 	slidesh = slideshow(slides)
-	slidesh = slidesh.ordenarMax()
+	#slidesh = slidesh.ordenarMax()
+	slidesh = slidesh.ordenarEstadisticamente()
 	slidesh.escribir()
