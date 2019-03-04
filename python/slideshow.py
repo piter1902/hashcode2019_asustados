@@ -107,8 +107,8 @@ class slideshow:
 		for i in range(0, hasta):
 			# La suma es en parejas, es decir: (0,1), (1,2), (2,3), (3,4) ... (hasta-1,hasta)
 			suma += self.__v[i].min(self.__v[i+1])
-			sys.stderr.write('suma en for = ' + str(suma)+'\n')
-		sys.stderr.write('suma = ' + str(suma)+'\n')
+			#sys.stderr.write('suma en for = ' + str(suma)+'\n')
+		#sys.stderr.write('suma = ' + str(suma)+'\n')
 		return suma
 
 	#suponemos que entre distintos matches solo cambia el elemento final
@@ -130,8 +130,8 @@ class slideshow:
 		for i in range(0, hasta):
 			# La suma es en parejas, es decir: (0,1), (1,2), (2,3), (3,4) ... (hasta-1,hasta)
 			suma += self.__v[i].min(self.__v[i+1])
-			sys.stderr.write('suma en for = ' + str(suma)+'\n')
-		sys.stderr.write('suma = ' + str(suma)+'\n')
+			#sys.stderr.write('suma en for = ' + str(suma)+'\n')
+		#sys.stderr.write('suma = ' + str(suma)+'\n')
 		return suma
 
 
