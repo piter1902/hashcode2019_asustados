@@ -22,11 +22,11 @@ class Slide:
 
 	def min(self, s):
 		a1 = s.tags() & self.tags()
-		sys.stderr.write('a1 = ' + str(len(a1))+'\n')
+		# sys.stderr.write('a1 = ' + str(len(a1))+'\n')
 		a2 = s.tags() - self.tags()
-		sys.stderr.write('a2 = ' + str((len(a2)))+'\n')
+		# sys.stderr.write('a2 = ' + str((len(a2)))+'\n')
 		a3 = self.tags() - s.tags()
-		sys.stderr.write('a3 = ' + str((len(a3)))+'\n')
+		# sys.stderr.write('a3 = ' + str((len(a3)))+'\n')
 		return min(len(a1), len(a2), len(a3))
 
 	def __str__(self):
