@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bda26ec-e3d2-41d4-9d79-252887191fdc" name="Default Changelist" comment="Falla algo en maximizar_verticales">
-      <change beforePath="$PROJECT_DIR$/../code.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../code.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modificarsal.py" beforeDir="false" afterPath="$PROJECT_DIR$/modificarsal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salidas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slideshow.py" beforeDir="false" afterPath="$PROJECT_DIR$/slideshow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slideshowAlgoritmo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/slideshowAlgoritmo2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,13 +18,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+            <state relative-caret-position="546">
+              <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slideshow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1444">
+              <caret line="133" column="9" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slideshowAlgoritmo2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="190" column="19" lean-forward="true" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
+            <state relative-caret-position="209">
+              <caret line="11" column="70" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -63,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modificarsal.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
@@ -91,9 +103,10 @@
         <option value="$PROJECT_DIR$/ejemplo.txt" />
         <option value="$PROJECT_DIR$/slide.py" />
         <option value="$PROJECT_DIR$/pic.py" />
+        <option value="$PROJECT_DIR$/modificarsal.py" />
+        <option value="$PROJECT_DIR$/slideshowAlgoritmo2.py" />
         <option value="$PROJECT_DIR$/slideshow.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/modificarsal.py" />
       </list>
     </option>
   </component>
@@ -261,12 +274,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
+    <frame x="0" y="34" width="1920" height="1046" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976378" visible="true" weight="0.12967844" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49685535" visible="true" weight="0.12967844" />
       <window_info id="Structure" order="1" sideWeight="0.5023622" side_tool="true" weight="0.12967844" />
-      <window_info id="Favorites" order="2" sideWeight="0.5023622" side_tool="true" weight="0.12967844" />
+      <window_info id="Favorites" order="2" sideWeight="0.5031447" side_tool="true" weight="0.12967844" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
@@ -282,6 +295,32 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Añadidos cambios para la escritura" />
@@ -316,16 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slideshow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datos/c_memorable_moments.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -343,34 +372,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datos/b_salidaNestor.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/salidab_good.txt" />
     <entry file="file://$PROJECT_DIR$/slideshowAlgoritmo2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="190" column="19" lean-forward="true" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
+        <state relative-caret-position="209">
+          <caret line="11" column="70" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/modificarsal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slideshow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1444">
+          <caret line="133" column="9" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

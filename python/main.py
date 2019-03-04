@@ -1,6 +1,7 @@
 import fileinput
 from pic import Pic
 from slide import Slide
+import slideshow as slidechow
 from slideshowAlgoritmo2 import slideshow
 
 
@@ -73,7 +74,8 @@ if __name__ == "__main__":
 
 	slides = []
 	estoTeSacaUnaListaDeSlides(slides)
-	slidesh = slideshow(slides)
-	#slidesh = slidesh.ordenarMax()
+	#slidesh = slideshow(slides)
+	slidesh = slidechow.slideshow(slides)
+	slidesh = slidesh.ordenarMax()
 	# slidesh = slidesh.ordenarEstadisticamente()
 	slidesh.escribir()
