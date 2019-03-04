@@ -23,14 +23,15 @@ def maximizarTags(elto1: Pic, verticales: list) -> Pic:
 	elto2 = verticales[0]
 	longLista = len(verticales)
 	i=0
-	while (not encontrado) && (i<longLista): #esto no es muy pythonesco pero vamos
+	while (not encontrado) and (i<longLista): #esto no es muy pythonesco pero vamos
 		elto2 = verticales[i]
 		long = len(elto1.tags() & elto2.tags())
 		if long < minIntersec:
 			minIntersec = long
 			if long == 0:
 				encontrado = True
-		i += 1
+		else:
+			i += 1
 	return verticales.pop(i)
 
 
@@ -38,6 +39,8 @@ def unirVerticales(slides: list, picsV: list):
 	while(picsV): # no esta vacia
 		elto1 = picsV.pop(0)
 		elto2 = maximizarTags(elto1, picsV) # no tengo en cuenta verticales impares...
+		#No existen las verticales impares.
+		slides.append(Slide(elto1, elto2))
 
 
 #meencantacopiarypegarcodigo
