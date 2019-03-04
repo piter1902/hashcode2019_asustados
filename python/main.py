@@ -30,9 +30,8 @@ def maximizarTags(elto1: Pic, verticales: list) -> Pic:
 			minIntersec = long
 			if long == 0:
 				encontrado = True
-		else:
-			i += 1
-	return verticales.pop(i)
+		i += 1
+	return verticales.pop(i-1)
 
 
 def unirVerticales(slides: list, picsV: list):
@@ -50,7 +49,7 @@ def estoTeSacaUnaListaDeSlides(slides):
 		if not fileinput.isfirstline(): #a tomar viento la primera linea
 			separada = line[:len(line)-1].split(' ') # Separamos por ' '
 			fila = fileinput.lineno() # n de fila
-			picLeido = Pic(fila-1, separada) # construyo el leido...
+			picLeido = Pic(fila-2, separada) # construyo el leido...
 			if (picLeido.orientation()):
 				picsVerticales.append(picLeido)
 			else:

@@ -6,7 +6,7 @@ from typing import re
 
 from slide import *
 
-PORCENTAJE_BATCH = 0.05 # proporcion del vector usada en cada batch
+PORCENTAJE_BATCH = 1 # proporcion del vector usada en cada batch
 
 
 # devuelve el indice en <batch> con mayor valor (<maximo>) para <elto>
