@@ -14,16 +14,45 @@ def a_ver_esa_lectura(pics):
 			picLeido = Pic(fila-1, separada) # construyo el leido...
 			pics.append(picLeido) # y lo anado a la lista
 			
+# devuelve el pic de verticales con menor interseccion de tags con elto; y lo elimina de
+# la lista
+def maximizarTags(elto1: Pic, verticales: list) -> Pic:
+	# ESTO ESTA MU FEO	
+	minIntersec = 10000
+	encontrado = False
+	elto2 = verticales[0]
+	longLista = len(verticales)
+	i=0
+	while (not encontrado) && (i<longLista): #esto no es muy pythonesco pero vamos
+		elto2 = verticales[i]
+		long = len(elto1.tags() & elto2.tags())
+		if long < minIntersec:
+			minIntersec = long
+			if long == 0:
+				encontrado = True
+		i += 1
+	return verticales.pop(i)
+
+
+def unirVerticales(slides: list, picsV: list):
+	while(picsV): # no esta vacia
+		elto1 = picsV.pop(0)
+		elto2 = maximizarTags(elto1, picsV) # no tengo en cuenta verticales impares...
+
 
 #meencantacopiarypegarcodigo
 def estoTeSacaUnaListaDeSlides(slides):
+	picsVerticales = []
 	for line in fileinput.input():
 		if not fileinput.isfirstline(): #a tomar viento la primera linea
 			separada = line[:len(line)-1].split(' ') # Separamos por ' '
 			fila = fileinput.lineno() # n de fila
 			picLeido = Pic(fila-1, separada) # construyo el leido...
-			slides.append(Slide(picLeido)) # y lo anado a la lista
-			
+			if (picLeido.orientation()):
+				picsVerticales.append(picLeido)
+			else:
+				slides.append(Slide(picLeido)) # y lo anado a la lista
+	unirVerticales(slides, picsVerticales)		
 
 
 

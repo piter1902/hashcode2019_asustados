@@ -39,7 +39,7 @@ class slideshow:
         i = 0
         if self.buscarMaxs(batch, i): # ha devuelto true, es el primero
             self.__v.insert(0, vector.pop(i))
-        else:
+        else: # false, pal final
             self.__v.append(vector.pop(i))
 
     # id pasa a ser el indice en batch del elto con mayor valor con el principio o el final del
