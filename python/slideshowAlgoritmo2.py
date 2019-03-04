@@ -21,7 +21,7 @@ def buscarMaxElto(elto: Slide, batch: list) -> (int, int):
             # sys.stderr.write('\n-----------\nMAXIMO = ' + str(maximo) + '\n-----------\n')
             id = i
     
-    sys.stderr.write('\n-----------\nMAXIMO = ' + str(maximo) + '\n-----------\n')
+    # sys.stderr.write('\n-----------\nMAXIMO = ' + str(maximo) + '\n-----------\n')
                  
     return id, maximo
 
@@ -63,14 +63,14 @@ class slideshow:
         id1, valor1 = buscarMaxElto(primerElto, batch)
         id2, valor2 = buscarMaxElto(ultimoElto, batch)
         if valor1 > valor2:
-            sys.stderr.write(
-                '\n\n\n\n\n\n valor1(' + str(id1) + ', ' + str(valor1) \
-                + ') > valor2('+ str(id2) + ', ' + str(valor2) + ') \n\n\n\n\n\n\n')
+            # sys.stderr.write(
+            #     '\n\n\n\n\n\n valor1(' + str(id1) + ', ' + str(valor1) \
+            #     + ') > valor2('+ str(id2) + ', ' + str(valor2) + ') \n\n\n\n\n\n\n')
             primeroMayor = True
             id = id1
         else:
-            sys.stderr.write('\n\n\n\n\n\n valor1(' + str(id1) + ', ' + str(valor1) \
-                + ') <= valor2('+ str(id2) + ', ' + str(valor2) + ') \n\n\n\n\n\n\n')
+            # sys.stderr.write('\n\n\n\n\n\n valor1(' + str(id1) + ', ' + str(valor1) \
+            #     + ') <= valor2('+ str(id2) + ', ' + str(valor2) + ') \n\n\n\n\n\n\n')
             primeroMayor = False
             id = id2
         return primeroMayor, id
