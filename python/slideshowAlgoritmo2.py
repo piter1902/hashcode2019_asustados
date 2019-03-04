@@ -10,15 +10,20 @@ PORCENTAJE_BATCH = 1 # proporcion del vector usada en cada batch
 
 
 # devuelve el indice en <batch> con mayor valor (<maximo>) para <elto>
-def buscarMaxElto(elto: Slide, batch: list, maximo: int) -> int:
-    max = 0
+# de la forma (id, maximo)
+def buscarMaxElto(elto: Slide, batch: list) -> (int, int):
+    maximo = 0
     id = 0
     for i, element in enumerate(batch):
         valor = element.min(elto)
-        if valor > max:
-            max = valor
+        if valor > maximo:
+            maximo = valor
+            # sys.stderr.write('\n-----------\nMAXIMO = ' + str(maximo) + '\n-----------\n')
             id = i
-    return id
+    
+    sys.stderr.write('\n-----------\nMAXIMO = ' + str(maximo) + '\n-----------\n')
+                 
+    return id, maximo
 
 
 
@@ -32,31 +37,43 @@ class slideshow:
         for i in range(self.__num-1):
             self.anyadirDeBatch(vector)
 
+            # if len(self.__v) < 50:
+
+                # sys.stderr.write('----------- ' + str(len(self.__v)) + ' -----------\n')
+                # #print("-----")
+                # for el in self.__v:
+                #     sys.stderr.write(str(el) + '\n')
 
     def anyadirDeBatch(self, vector: list):
         tamagno = math.ceil(len(vector) * PORCENTAJE_BATCH)
         batch = vector[:tamagno] # los primeros eltos del tamagno que sea
-        i = 0
-        if self.buscarMaxs(batch, i): # ha devuelto true, es el primero
+        primeroMayor, i = self.buscarMaxs(batch)        
+        if primeroMayor: # ha devuelto true, es el primero
             self.__v.insert(0, vector.pop(i))
         else: # false, pal final
             self.__v.append(vector.pop(i))
 
-    # id pasa a ser el indice en batch del elto con mayor valor con el principio o el final del
-    # vector de self. Devuelve true sii el maximo era el principio de la lista (false si es al final)
-    def buscarMaxs(self, batch: list, id: int) -> (bool):
+    # devuelve (primeroMayor, id), donde id es el indice en batch del elto con mayor valor 
+    # con el principio o el final del vector de self. Devuelve true en primeroMayor sii el
+    # maximo era el principio de la lista (false si es al final)
+    def buscarMaxs(self, batch: list) -> (bool, int):
         primerElto = self.__v[0]
         ultimoElto = self.__v[-1] # ultimo ????? 
         valor1 = valor2 = 0
-        id1 = buscarMaxElto(primerElto, batch, valor1)
-        id2 = buscarMaxElto(ultimoElto, batch, valor2)
+        id1, valor1 = buscarMaxElto(primerElto, batch)
+        id2, valor2 = buscarMaxElto(ultimoElto, batch)
         if valor1 > valor2:
+            sys.stderr.write(
+                '\n\n\n\n\n\n valor1(' + str(id1) + ', ' + str(valor1) \
+                + ') > valor2('+ str(id2) + ', ' + str(valor2) + ') \n\n\n\n\n\n\n')
             primeroMayor = True
             id = id1
         else:
+            sys.stderr.write('\n\n\n\n\n\n valor1(' + str(id1) + ', ' + str(valor1) \
+                + ') <= valor2('+ str(id2) + ', ' + str(valor2) + ') \n\n\n\n\n\n\n')
             primeroMayor = False
             id = id2
-        return primeroMayor
+        return primeroMayor, id
 
 
 
