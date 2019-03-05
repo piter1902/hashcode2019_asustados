@@ -8,6 +8,8 @@ from slide import *
 
 PORCENTAJE_BATCH = 1 # proporcion del vector usada en cada batch
 
+def menor_numero_tags(p: Slide):
+    return len(p.tags())
 
 # devuelve el indice en <batch> con mayor valor (<maximo>) para <elto>
 # de la forma (id, maximo)
@@ -33,7 +35,10 @@ class slideshow:
         self.__num = len(vector) # nº de slides en vector
         # np.random.shuffle(vector) #lo reordenamos una vez y prau # o 0 veces
         self.__v = []
-        self.__v.append(vector.pop(random.randint(0,self.__num))) # empezamos con un elto aleatorio de momento?
+        #self.__v.append(vector.pop(random.randint(0,self.__num))) # empezamos con un elto aleatorio de momento?
+        prim = min(vector, key=menor_numero_tags)
+        self.__v.append(prim)
+        vector.remove(prim)
         for i in range(self.__num-1):
             self.anyadirDeBatch(vector)
 
