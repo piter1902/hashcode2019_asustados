@@ -31,7 +31,7 @@ class slideshow:
     def __init__(self, vector: list = list()):
         self.__m = 0    # para match_barato
         self.__num = len(vector) # nº de slides en vector
-        np.random.shuffle(vector) #lo reordenamos una vez y prau
+        # np.random.shuffle(vector) #lo reordenamos una vez y prau # o 0 veces
         self.__v = []
         self.__v.append(vector.pop(random.randint(0,self.__num))) # empezamos con un elto aleatorio de momento?
         for i in range(self.__num-1):
